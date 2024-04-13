@@ -41,3 +41,9 @@ resource "aws_instance" "suraj_tf" {
   }
 
 }
+
+provisioner "local-exec" {
+
+  command = "echo ${aws_instance.web.public_ip} > inventory.ini"
+
+}
