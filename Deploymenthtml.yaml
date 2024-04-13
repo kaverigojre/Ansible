@@ -1,0 +1,8 @@
+- name: install nginx
+    hosts: all
+    become: yes 
+    tasks:
+      - name: update the system
+        shell: sudo apt-get update -y 
+
+ 
