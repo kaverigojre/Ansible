@@ -5,4 +5,21 @@
       - name: update the system
         shell: sudo apt-get update -y 
 
+      - name: install nginx and create index file
+        shell: | 
+               sudo apt-get install nginx -y
+               sudo echo "Hello World" > /var/www/html/index.html
+
+
+      - name: restart nginx
+        shell: sudo systemctl restart nginx 
+
+      - name: copying about.html file
+        template: 
+          src: ./about.html
+          dest: /var/www/html
+       
+
+      
+
  
